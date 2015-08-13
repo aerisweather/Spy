@@ -61,7 +61,7 @@ $spy->andReturnUsing(function($str) {
 $spy('foo');  // 'FOO'
 ```
 
-### Spy::returns($val);
+### `Spy::returns($val);`
 
 Creates a spy which returns a value. Short-hand for creating a spy, then calling `andReturn`.
 
@@ -69,4 +69,16 @@ Creates a spy which returns a value. Short-hand for creating a spy, then calling
 $spy = Spy::returns('foo');
 
 $spy(); 	// 'foo'
+```
+
+### `Spy::returnsUsing($callable);`
+
+Creates a spy which returns a value via a callable. Short-hand for creating a spy, then calling `andReturnUsing`.
+
+```php
+$spy = Spy::returnsUsing(function($str) {
+  strtoupper($str);
+});
+
+$spy('foo'); 	// 'FOO'
 ```

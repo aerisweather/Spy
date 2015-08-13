@@ -32,6 +32,14 @@ class Spy {
 		return $spy;
 	}
 
+	public static function returnsUsing(callable $cb) {
+		$spy = new Spy();
+
+		$spy->andReturnUsing($cb);
+
+		return $spy;
+	}
+
 	/**
 	 * @return M\Expectation
 	 */

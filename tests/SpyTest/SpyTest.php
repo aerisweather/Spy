@@ -99,4 +99,13 @@ class SpyTest extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals('foo', $spy());
 	}
 
+	/** @test */
+	public function returnsUsing_shouldCreateASpyWhichReturnsUsingTheCallable() {
+		$spy = Spy::returnsUsing(function($arg) {
+			return strtoupper($arg);
+		});
+
+		$this->assertEquals('FOO', $spy('foo'));
+	}
+
 }
