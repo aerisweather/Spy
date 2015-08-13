@@ -10,7 +10,23 @@ composer require aeris/spy
 
 ## Overview
 
-An `Aeris\Spy` allows you to mock `callable`s in PHP.
+An `Aeris\Spy` allows you to mock `callable`s in PHP. A `Spy` wraps around a [`Mockery\`](http://docs.mockery.io/) object, which means that you can use Mockery expectations with your Aeris Spies.
+
+For example:
+
+```php
+$spy = new Spy();
+
+$spy(5);
+$spy(6);
+$spy(7);
+
+$spy->shouldHaveBeenCalled()
+  ->twice()
+  ->with(\Mockery::on(function($arg) {
+    return $arg > 5;
+  )))
+```
 
 ## API
 
