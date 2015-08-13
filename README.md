@@ -7,3 +7,50 @@ Test spies for PHP.
 ```
 composer require aeris/spy
 ```
+
+## Overview
+
+An `Aeris\Spy` allows you to mock `callable`s in PHP.
+
+## API
+
+### `shouldHaveBeenCalled()` / `shouldNotHaveBeenCalled()`
+
+```php
+$spy = new Spy();
+
+$spy();
+
+$spy->shouldHaveBeenCalled();  // Passes (no exception)
+$spy->shouldNotHaveBeenCalled(); // Failed (throws \Mockery\Exception\InvalidCountException)
+```
+
+### `andReturn($val)`
+
+```php
+$spy = new Spy();
+$spy->andReturn('foo');
+
+$spy();  // 'foo'
+```
+
+### `andReturnUsing`
+
+```php
+$spy = new Spy()
+$spy->andReturnUsing(function($str) {
+  strtoupper($str);
+});
+
+$spy('foo');  // 'FOO'
+```
+
+### Spy::returns($val);
+
+Creates a spy which returns a value. Short-hand for creating a spy, then calling `andReturn`.
+
+```php
+$spy = Spy::returns('foo');
+
+$spy(); 	// 'foo'
+```

@@ -10,5 +10,12 @@
     ],
     "require": {
         "mockery/mockery": "^0.9.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aeris\\Spy\\": "src/Spy",
+            "Aeris\\SpyTest\\": "tests/SpyTest"
+        },
+        "classmap": ["src/Spy.php"]
     }
 }
