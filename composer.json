@@ -1,6 +1,7 @@
 {
     "name": "aeris/spy",
     "description": "Test spies",
+    "version": "1.0.0",
     "license": "BSD",
     "authors": [
         {
