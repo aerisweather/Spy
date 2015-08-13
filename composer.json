@@ -1,0 +1,11 @@
+{
+    "name": "aeris/spy",
+    "description": "Test spies",
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "Edan Schwartz",
+            "email": "eschwartz@aerisweather.net"
+        }
+    ]
+}
